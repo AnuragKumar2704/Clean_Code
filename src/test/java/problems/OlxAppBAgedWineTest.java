@@ -1,7 +1,7 @@
 package problems;
 
-import org.example.Item;
-import org.example.OlxApp;
+import org.example.exercises.Item;
+import org.example.exercises.OlxApp;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
