@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class FlightScheduler {
-    public String transform(List<LocalDate> s) {
+    public String transform(List<LocalDate> ) {
         String d = null;
         for (LocalDate kc : s // arrival times
         ) {
