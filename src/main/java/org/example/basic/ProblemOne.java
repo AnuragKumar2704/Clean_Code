@@ -2,7 +2,7 @@ package org.example.basic;
 
 import java.time.LocalDate;
 
-public class ProblemOne {
+public class FoodInspection{
 
     private LocalDate expirationDate;
     private Boolean approvedForConsumption;
