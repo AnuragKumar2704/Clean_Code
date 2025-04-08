@@ -8,7 +8,7 @@ public class FoodInspection{
     private Boolean approvedForConsumption;
     private Integer inspectorId;
 
-    public ProblemOne(LocalDate expirationDate, Boolean approvedForConsumption, Integer inspectorId) {
+    public FoodInspection(LocalDate expirationDate, Boolean approvedForConsumption, Integer inspectorId) {
         this.expirationDate = expirationDate;
         this.approvedForConsumption = approvedForConsumption;
         this.inspectorId = inspectorId;
@@ -16,12 +16,9 @@ public class FoodInspection{
 
     public boolean isEdible()
     {
-        if (this.expirationDate.isAfter(LocalDate.now()) &&
-                this.approvedForConsumption == true &&
-                this.inspectorId != null)
-        {
-            return true;
-        }
+        return (expirationDate.isAfter(LocalDate.now()) &&
+                approvedForConsumption &&
+                inspectorId != null);
 
     }
 }
