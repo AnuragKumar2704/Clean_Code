@@ -22,9 +22,6 @@ public class ProblemOne {
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+
     }
 }
