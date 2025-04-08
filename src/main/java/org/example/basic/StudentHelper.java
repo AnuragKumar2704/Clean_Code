@@ -57,10 +57,17 @@ public class StudentHelper {
      */
 
     public String willQualifyForQuiz(int marks1, int marks2, boolean isMaths) {
-        if ((isMaths ? marks1 <= 25 : marks1 <= 20)
-                || (isMaths ? marks2 <= 25 : marks2 <= 20)) return "NO";
-        if ((isMaths ? marks1 >= 85 : marks1 >= 80)
-                || (isMaths ? marks2 >= 85 : marks2 >= 80)) return "YES";
+        int badThreshold = isMaths ? 25 : 20;
+        int goodThreshold = isMaths ? 85 : 80;
+
+        if (marks1 <= badThreshold || marks2 <= badThreshold) {
+            return "NO";
+        }
+
+        if (marks1 >= goodThreshold || marks2 >= goodThreshold) {
+            return "YES";
+        }
+
         return "MAYBE";
     }
 
