@@ -2,7 +2,7 @@ package org.example.basic;
 
 import java.time.LocalDate;
 
-public class FoodInspection{
+public class FoodInspection {
 
     private final LocalDate expirationDate;
     private final Boolean approvedForConsumption;
@@ -14,8 +14,7 @@ public class FoodInspection{
         this.inspectorId = inspectorId;
     }
 
-    public boolean isEdible()
-    {
+    public boolean isEdible() {
         return (expirationDate.isAfter(LocalDate.now()) &&
                 approvedForConsumption &&
                 inspectorId != null);
