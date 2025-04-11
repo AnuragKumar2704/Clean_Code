@@ -4,16 +4,21 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class FlightScheduler {
-    public String transform(List<LocalDate> Dates) {
-        StringBuilder result = new StringBuilder();
 
-        for (LocalDate Date : Dates) {
-            if (Date.isAfter(LocalDate.now())) {
-                result.append(Date).append("\n");
+    private static final String STATUS_DELAYED = "Delayed";
+
+    public String getFlightStatuses(List<LocalDate> flightDates) {
+        StringBuilder statusReport = new StringBuilder();
+        LocalDate currentDate = LocalDate.now();
+
+        for (LocalDate flightDate : flightDates) {
+            if (flightDate.isAfter(currentDate)) {
+                statusReport.append(flightDate).append("\n");
             } else {
-                result.append("Delayed\n");
+                statusReport.append(STATUS_DELAYED).append("\n");
             }
         }
-        return result.toString();
+
+        return statusReport.toString();
     }
 }
