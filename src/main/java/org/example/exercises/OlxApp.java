@@ -1,5 +1,4 @@
 package org.example.exercises;
-
 import java.util.Arrays;
 
 public class OlxApp {
