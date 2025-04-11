@@ -21,6 +21,12 @@ public class StudentHelper {
         return marks >= GRADE_B_LOWER_LIMIT && marks <= upperLimit;
     }
 
+    // Quiz qualification constants
+    private static final int GOOD_MARKS_THRESHOLD = 80;
+    private static final int BAD_MARKS_THRESHOLD = 20;
+    private static final int MATHS_THRESHOLD_EXTRA = 5;
+
+
     /* PROBLEM 2 */
 	/*
 	You are awarded a grade based on your marks.
@@ -43,10 +49,10 @@ public class StudentHelper {
     }
 
     private boolean isGradeBRange(int marks, boolean isMaths) {
-        int lowerLimit = isMaths ? 55 : 50;
-        int upperLimit = 90;
-        return marks > lowerLimit && marks <= upperLimit;
+        int lowerLimit = isMaths ? GRADE_B_LOWER_LIMIT + MATHS_THRESHOLD_EXTRA : GRADE_B_LOWER_LIMIT - 1;
+        return marks > lowerLimit && marks <= GRADE_A_THRESHOLD;
     }
+
 
 
 
@@ -67,8 +73,8 @@ public class StudentHelper {
      */
 
     public String willQualifyForQuiz(int marks1, int marks2, boolean isMaths) {
-        int badThreshold = isMaths ? 25 : 20;
-        int goodThreshold = isMaths ? 85 : 80;
+        int badThreshold = isMaths ? BAD_MARKS_THRESHOLD + MATHS_THRESHOLD_EXTRA : BAD_MARKS_THRESHOLD;
+        int goodThreshold = isMaths ? GOOD_MARKS_THRESHOLD + MATHS_THRESHOLD_EXTRA : GOOD_MARKS_THRESHOLD;
 
         if (marks1 <= badThreshold || marks2 <= badThreshold) {
             return "NO";
