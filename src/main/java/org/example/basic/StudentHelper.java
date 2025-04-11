@@ -12,6 +12,10 @@ public class StudentHelper {
     private static final int GRADE_B_UPPER_LIMIT = 80;
     private static final int MATHS_GRADE_B_EXTRA = 10;
 
+    // Grade A constants
+    private static final int GRADE_A_THRESHOLD = 90;
+    private static final int MATHS_GRADE_A_EXTRA = 5;
+
     public boolean isGradeB(int marks, boolean isMaths) {
         int upperLimit = isMaths  ? GRADE_B_UPPER_LIMIT + MATHS_GRADE_B_EXTRA : GRADE_B_UPPER_LIMIT;
         return marks >= GRADE_B_LOWER_LIMIT && marks <= upperLimit;
@@ -34,7 +38,7 @@ public class StudentHelper {
     }
 
     private boolean isGradeA(int marks, boolean isMaths) {
-        int gradeAThreshold = isMaths ? 95 : 90;
+        int gradeAThreshold = isMaths ? GRADE_A_THRESHOLD + MATHS_GRADE_A_EXTRA : GRADE_A_THRESHOLD;
         return marks > gradeAThreshold;
     }
 
