@@ -18,6 +18,5 @@ public class FoodInspection {
         return (expirationDate.isAfter(LocalDate.now()) &&
                 approvedForConsumption &&
                 inspectorId != null);
-
     }
 }
