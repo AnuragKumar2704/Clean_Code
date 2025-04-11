@@ -3,6 +3,12 @@ package org.example.exercises;
 import java.util.Arrays;
 
 public class OlxApp {
+
+	private static final String AGED_WINE = "Aged Wine";
+	private static final String CONCERT_PASSES = "ColdPlay concert passes";
+	private static final String LEGENDARY_ITEM = "PokemonGo";
+	private static final int MAX_QUALITY = 50;
+	private static final int MIN_QUALITY = 0;
 	
 	public Item[] items;
 
