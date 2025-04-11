@@ -1,6 +1,6 @@
 package org.example.basic;
 
-public class StudentHelper {
+public class StudentGrades {
 
     /* PROBLEM 1 */
     /*
