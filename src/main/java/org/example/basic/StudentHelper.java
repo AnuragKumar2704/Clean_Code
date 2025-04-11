@@ -6,9 +6,15 @@ public class StudentHelper {
     /*
      * You get a grade B if marks are between 51 and 80 (both inclusive). Except for Maths where the upper limit is increased by 10.
      */
+
+    // Grade B constants
+    private static final int GRADE_B_LOWER_LIMIT = 51;
+    private static final int GRADE_B_UPPER_LIMIT = 80;
+    private static final int MATHS_GRADE_B_EXTRA = 10;
+
     public boolean isGradeB(int marks, boolean isMaths) {
-        int upperLimit = isMaths ? 90 : 80;
-        return marks >= 51 && marks <= upperLimit;
+        int upperLimit = isMaths  ? GRADE_B_UPPER_LIMIT + MATHS_GRADE_B_EXTRA : GRADE_B_UPPER_LIMIT;
+        return marks >= GRADE_B_LOWER_LIMIT && marks <= upperLimit;
     }
 
     /* PROBLEM 2 */
@@ -63,11 +69,9 @@ public class StudentHelper {
         if (marks1 <= badThreshold || marks2 <= badThreshold) {
             return "NO";
         }
-
         if (marks1 >= goodThreshold || marks2 >= goodThreshold) {
             return "YES";
         }
-
         return "MAYBE";
     }
 
